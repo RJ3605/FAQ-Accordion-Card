@@ -1,0 +1,124 @@
+body {
+  background-image: linear-gradient(#ab68eb, #6462e7);
+  font-family: "Kumbh sans", sans-serif;
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+}
+
+main {
+  background-color: #fff;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 20%;
+  padding-bottom: 50px;
+  font-size: 12px;
+  min-width: 300px;
+  max-width: 300px;
+}
+
+picture {
+  display: flex;
+  justify-content: center;
+  width: 67%;
+  margin: auto;
+  background: url("images/bg-pattern-mobile.svg") no-repeat;
+  background-size: 100% 100%;
+  overflow: visible;
+  padding-bottom: 30px;
+}
+
+#woman {
+  margin-top: -90px;
+}
+
+#content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+#faq-title-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.accordion-div {
+  width: 90%;
+}
+
+details {
+  border-bottom: solid thin hsl(240, 5%, 91%);
+  color: hsl(240, 6%, 50%);
+  padding: 10px 0px;
+  width: 100%;
+}
+
+.accordion-label {
+  width: 100%;
+  text-align: left;
+  transition: 0.4s;
+  background-color: white;
+  padding: 5px 0px;
+}
+
+.accordion-label::after {
+  content: "\276F";
+  color: hsl(14, 88%, 65%);
+  float: right;
+  transform: rotate(90deg);
+  transition: 0.5s;
+}
+
+p {
+  max-width: 90%;
+  font-size: 10px;
+}
+
+.accordion-label:hover,
+.accordion-label:active {
+  color: hsl(14, 88%, 65%);
+  cursor: pointer;
+}
+
+details[open] > summary ~ * {
+  animation: sweep 0.5s ease-in-out;
+}
+
+details[open] > summary.accordion-label {
+  font-weight: 700;
+}
+
+details[open] > summary::after {
+  transform: rotate(-90deg);
+  transition: 0.5s;
+}
+
+details > summary {
+  list-style: none;
+  color: hsl(237, 12%, 33%);
+  transition: margin 0.5s ease-in-out;
+}
+
+details[open] > summary {
+  margin-bottom: 10px;
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    width: 550px;
+  }
+}
